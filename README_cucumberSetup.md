@@ -1,4 +1,4 @@
-#ACCSTEST
+#ACCSTEST_CUCUMBER
 ========
 ACCSTEST is a project which is designed for testing ACCS, including web and web services.
 
@@ -16,9 +16,8 @@ ACCSTEST is a project which is designed for testing ACCS, including web and web 
 
 * MySQL22 0.3.11 x86-mingw32
 * Selenium-WebDriver 2.33.0
-* RSpec 2.13.0
+* **Cucumber 1.3.2**
 * Rails 4.0.0.rc2
-* Savon 2.2.0
 * <Other depended library>
 
 
@@ -59,21 +58,17 @@ ACCSTEST is a project which is designed for testing ACCS, including web and web 
 
 		gem install selenium-webdriver
 
-8.	Install RSpec via:
+8.	Install cucumber via:
 
-		gem install rspec
+		gem install cucumber
 
 9.	Install Rails 4 via:
 
 		gem install rails --pre
 
-10.	Install Savon via:
-
-		gem install savon
-
-11.	Check installed gem via cmd by execute command: gem list
-12.	Download and install Firefox from [here](http://www.mozilla.org/en-US/firefox/new/).
-13.	Install Selenium IDE for Firefox from Selenium website, [here](http://docs.seleniumhq.org/download/)
+10.	Check installed gem via cmd by execute command: gem list
+11.	Download and install Firefox from [here](http://www.mozilla.org/en-US/firefox/new/).
+12.	Install Selenium IDE for Firefox from Selenium website, [here](http://docs.seleniumhq.org/download/)
 
 ###MacOSX (Mountain Lion)
 
@@ -94,18 +89,15 @@ ACCSTEST is a project which is designed for testing ACCS, including web and web 
 
 		gem install selenium-webdriver
 
-9.	Install RSpec via:
+9.	Install cucumber via:
 
-		gem install rspec
+		gem install cucumber
 
 10.	Install Rails 4 via:
 
 		gem install rails --pre
 
-11.	Install Savon via:
-
-		gem install savon
-
+11.	Check installed gem via cmd by execute command: gem list
 12.	Download and install Firefox from [here](http://www.mozilla.org/en-US/firefox/new/).
 13.	Install Selenium IDE for Firefox from Selenium website, [here](http://docs.seleniumhq.org/download/)
 
@@ -130,4 +122,27 @@ wait.until { driver.title.downcase.start_with? "cheese!" }
 puts "Page title is #{driver.title}"
 driver.quit
 ```
-	
+
+##Procedure for Test cucumber
+
+1. Clone cucumber repository from [here](https://github.com/cucumber/cucumber.git)
+2. Access path cucumber/cucumber/examples
+3. Access following directory [cucumber/examples/i18n/en-lol/](https://github.com/cucumber/cucumber/tree/master/examples/i18n/en-lol).
+4. Execute command: cucumber
+5. Expected Result displayed below.
+
+``` ruby
+*** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output on Windows
+# language: en-lol
+OH HAI: STUFFING
+
+  MISHUN: CUCUMBR                        # features\stuffing.feature:4
+    I CAN HAZ IN TEH BEGINNIN 3 CUCUMBRZ # features/step_definitions/cucumbrz_steps.rb:1
+    WEN I EAT 2 CUCUMBRZ                 # features/step_definitions/cucumbrz_steps.rb:5
+    DEN I HAS 2 CUCUMBERZ IN MAH BELLY   # features/step_definitions/cucumbrz_steps.rb:10
+    AN IN TEH END 1 CUCUMBRZ KTHXBAI     # features/step_definitions/cucumbrz_steps.rb:14
+
+1 scenario (1 passed)
+4 steps (4 passed)
+0m0.009s
+```

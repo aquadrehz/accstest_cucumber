@@ -45,14 +45,14 @@ Cucumber
 	
 Note: You can include multiple Example tables if you like.
 
-Cucumber uses the features/support/env.rb file to set up cucumber.
-Before do  |scenario|
-...
-end
+* Cucumber uses the features/support/env.rb file to set up cucumber.
+	Before do  |scenario|
+	...
+	end
 
-After do
-...
-end
+	After do
+	...
+	end
 
 Reference: [MD file syntax](https://github.com/fletcher/MultiMarkdown/blob/master/Documentation/Markdown%20Syntax.md)
 Reference: [cucumber structure](http://www.nigelthorne.com/2009/04/cucumber-syntax.html)
