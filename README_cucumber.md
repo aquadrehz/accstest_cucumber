@@ -5,13 +5,13 @@ Cucumber
 
 * bin
 * features
-	** XXX.feature
-	** ...
+	* XXX.feature
+	* ...
 * step_definitions
-    ** XXX_steps.rb
-    ** ...
+    * XXX_steps.rb
+    * ...
 * support
-    ** env.rb
+    * env.rb
 * lib
 * spec
 
@@ -78,6 +78,7 @@ When(/^     [some action]     $/) do
   pending # express the regexp above with the code you wish you had
 end
 ...
+
 ```
 
 5. Add Before, After and Then step.
@@ -109,6 +110,7 @@ When(/^     [some expectation]     $/) do
   [ruby command]
 end
 ...
+
 ```
 
 7. Add some ruby operation statement in all step. This step is core function of the cucumber.
