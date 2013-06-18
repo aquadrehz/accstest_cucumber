@@ -20,7 +20,7 @@ Feature: Test case001 Create V2V non activity - Submit
 
   Scenario: Display creating duplicate V2V non activity
     Given the I am on Create Request Shipment VAA to VAA page
-    When click“Outbound -> VAA Outbound button
+    When click Outbound -> VAA Outbound button
     And click the Create VAA to VAA button
     And fill request info
     And click the Get Information button
