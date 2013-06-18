@@ -67,7 +67,7 @@ Cucumber Implementation step
 4. Remove unused text in XXX_step.rb until left as below.
 	Given    
 	And [some action]   
-``` ruby
+```` ruby
 # encoding: utf-8
 Given(/^     [some statement]     $/) do
   pending # express the regexp above with the code you wish you had
@@ -79,7 +79,7 @@ When(/^     [some action]     $/) do
 end
 ...
 
-```
+````
 
 5. Add Before, After and Then step.
 

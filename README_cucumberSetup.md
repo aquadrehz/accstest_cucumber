@@ -127,22 +127,42 @@ driver.quit
 
 1. Clone cucumber repository from [here](https://github.com/cucumber/cucumber.git)
 2. Access path cucumber/cucumber/examples
-3. Access following directory [cucumber/examples/i18n/en-lol/](https://github.com/cucumber/cucumber/tree/master/examples/i18n/en-lol).
+3. Access following directory [cucumber/examples/i18n/en-/](https://github.com/cucumber/cucumber/tree/master/examples/i18n/en).
 4. Execute command: cucumber
 5. Expected Result displayed below.
 
 ``` ruby
 *** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output on Windows
-# language: en-lol
-OH HAI: STUFFING
+# language: en
+Feature: Addition
+  In order to avoid silly mistakes
+  As a math idiot
+  I want to be told the sum of two numbers
 
-  MISHUN: CUCUMBR                        # features\stuffing.feature:4
-    I CAN HAZ IN TEH BEGINNIN 3 CUCUMBRZ # features/step_definitions/cucumbrz_steps.rb:1
-    WEN I EAT 2 CUCUMBRZ                 # features/step_definitions/cucumbrz_steps.rb:5
-    DEN I HAS 2 CUCUMBERZ IN MAH BELLY   # features/step_definitions/cucumbrz_steps.rb:10
-    AN IN TEH END 1 CUCUMBRZ KTHXBAI     # features/step_definitions/cucumbrz_steps.rb:14
+  Scenario Outline: Add two numbers                    # features\addition.feature:7
+    Given I have entered <input_1> into the calculator # features/step_definitions/calculator_steps.rb:14
+    And I have entered <input_2> into the calculator   # features/step_definitions/calculator_steps.rb:14
+    When I press <button>                              # features/step_definitions/calculator_steps.rb:18
+    Then the result should be <output> on the screen   # features/step_definitions/calculator_steps.rb:22
 
-1 scenario (1 passed)
-4 steps (4 passed)
-0m0.009s
+    Examples:
+      | input_1 | input_2 | button | output |
+      | 20      | 30      | add    | 50     |
+      | 2       | 5       | add    | 7      |
+      | 0       | 40      | add    | 40     |
+
+# language: en
+Feature: Division
+  In order to avoid silly mistakes
+  Cashiers must be able to calculate a fraction
+
+  Scenario: Regular numbers                  # features\division.feature:6
+    * I have entered 3 into the calculator   # features/step_definitions/calculator_steps.rb:14
+    * I have entered 2 into the calculator   # features/step_definitions/calculator_steps.rb:14
+    * I press divide                         # features/step_definitions/calculator_steps.rb:18
+    * the result should be 1.5 on the screen # features/step_definitions/calculator_steps.rb:22
+
+4 scenarios (4 passed)
+16 steps (16 passed)
+0m0.026s
 ```
