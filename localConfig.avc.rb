@@ -1,0 +1,31 @@
+# Initialize Attribute was Created ----- Charoensak 201306191217
+config = {
+	:db => {
+		:host => '192.168.56.101',
+	},
+	:selenium => {
+    :driver => :firefox,
+		:base_url => 'http://localhost:10080/accs'
+	},
+	:logger => {
+		:level => 'ERROR'
+	},
+    :authorization => {
+    :cms => {
+      :username => '',
+      :password => ''
+    },
+    :vaa => {
+      :username => 'v01admin',
+      :password => '123456'
+    },
+    :tmo => {
+      :username => '',
+      :password => ''
+    },
+    :oga => {
+      :username => '',
+      :password => ''
+    }
+  }
+}

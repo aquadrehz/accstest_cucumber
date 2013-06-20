@@ -1,65 +1,33 @@
 # encoding: utf-8
-Given(/^the I am on Create Request Shipment VAA to VAA page$/) do
+# Res arranged and modified manually in order to show non-argument procedure on top.     ----- Shumnan 201306191217
+require 'selenium-webdriver'
+
+#TODO Implement these step to input in each element.     ----- Shumnan 201306191353
+
+# ========== When ============================================================
+When(/^choose the destination$/) do
+  # TODO This element is unavailable due to no related page was implemented in web site.
+end
+
+When(/^click tab link at "(.*?)" "(.*?)"$/) do |neame|
+  hrefValue = "/accs/vaa/www/outbound/index/"   if name == "VAA Outbound"
+  hrefValue = "/accs/vaa/www/activity/index/"   if name == "VAA Activity"
+  # hrefValue = <targetPath>   if name == <containerName>
+  # Place another tab target hear as same as above pattern. Check html element for more detail.
+  $driver.find_element(:href, hrefValue).click
+end
+
+When(/^fill the "(.*?)" V2V info$/) do |option|
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^click Outbound \-> VAA Outbound button$/) do
+# ========== Then ============================================================
+Then(/^V2V is inserted to database$/) do
+  # TODO need to broke this step into sub step that check from GUI only
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^click Create VAA to VAA button$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^fill request info$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click the Get Information button$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^choose destination$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^V(\d+)V is inserted to database$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click the Create VAA to VAA button$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^display รายการนี้ถูกสร้างคำร้องฯแล้ว$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^display ไม่พบรายการที่ค้นหา$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^the I am on "(.*?)" page$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click "(.*?)" button$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click the "(.*?)" button$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click“"(.*?)" button$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^display "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^click“Outbound \-> VAA Outbound button$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^display the Warning "(.*?)"$/) do |warning|
+  # TODO This item wasn't clearly declared. Need to check the code via manual testing.
 end
 
