@@ -5,7 +5,7 @@ config = {
 	},
 	:selenium => {
     :driver => :firefox,
-		:base_url => 'http://localhost:10080/accs'
+		:base_url => 'http://localhost:80/accs'
 	},
 	:logger => {
 		:level => 'ERROR'
@@ -16,7 +16,7 @@ config = {
       :password => ''
     },
     :vaa => {
-      :username => 'v01admin',
+      :username => 'expadmin',
       :password => '123456'
     },
     :tmo => {

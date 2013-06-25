@@ -12,19 +12,19 @@ require 'selenium-webdriver'
 # Re-arranged and modified manually in order to show non-argument procedure on top. ----- Shumnan 201306191353
 # ========== Given ============================================================
 
-Given(/^I have logged in as "(.*?)" user at "(.*?)"$/) do  |user, landingPage|
+Given (/^I have logged in as "(.*?)" user at "(.*?)"$/) do  |user, landingPage|
   # Authorization step ----- Charoensak 201306191217
   # Modify ----- Shumnan 201306191353
   url = "#{Environment.instance.selenium_spec[:base_url]}#{landingPage}"
-  
-  isCorrectURL = /http[s]?:\/\/.*\/(#{user}).*/.eql?(url)
-  if isCorrectURL == false
-    raise "the specified url #{url} is not accs urls"
-  end
-  
   $driver.get(url)
+  $driver.get(url)
+  isCorrectURL = "/http[s]?:\/\/.*\/(#{user}).*/login/".match(url)
+  if isCorrectURL == false
+    raise "the specified url #{url} is not ACCS urls"
+  end
   if $driver.title == 'Login'
-    authorization = Environment.instance.authorization_spec isCorrectURL
+    site = user
+    authorization = Environment.instance.authorization_spec site
 
     $driver.find_element(:id, "Login_username").clear
     $driver.find_element(:id, "Login_username").send_keys authorization[:username]
@@ -51,7 +51,7 @@ Given(/^I have logged in as "(.*?)" user at "(.*?)"$/) do  |user, landingPage|
 
   def get_select(id)
     $logger.info "find element id = #{id} and return its value"
-    select_elem = $driver.find_element(:id, id) 
+    select_elem = $driver.find_element(:id, id)
     options = select_elem.find_elements(:tag_name, 'option')
     options.each { |option|
       if option.selected?
@@ -64,7 +64,7 @@ Given(/^I have logged in as "(.*?)" user at "(.*?)"$/) do  |user, landingPage|
 
   def set_select(id, value)
     $logger.info "find element id = #{id}"
-    select = $driver.find_element(:id, id) 
+    select = $driver.find_element(:id, id)
     options = select.find_elements(:tag_name, 'option')
     $logger.debug "options.size = #{options.size}"
     options.each { |option|

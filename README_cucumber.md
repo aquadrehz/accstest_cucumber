@@ -29,10 +29,10 @@ Cucumber
 
 * Scenario Outline: [name of the scenario]
 	Given [some statement]   
-	And [some action]   
+	And [some action] <Column A> <Column B>  
 	...   
 	When [some action]   
-	And [some action]   
+	And [some action] <Column C>   
 	...   
 	Then [expected result of the action on the system]   
 	And [another expectation]   
@@ -53,13 +53,29 @@ Note: You can include multiple Example tables if you like.
 	After do   
 	...   
 	end   
-
+Note: Doc Strings (""")
+	Doc strings just allow you to specify a larger piece of text than you could fit on a single line.   
+	For example, if you need to describe the precise content of an email message, you could do it like this:   
+	Then I should receive an email containing:-   
+	"""   
+	Dear Sir,   
+	Your account has been upgraded due to your 2 year membership.   
+	Sincerely,   
+	The Management   
+	"""   
+Note: Parse parameter as table
+	When I fill in the form with the following table:
+  	| Order Name | Date       | Client  | Price |
+  	| Test1      | 2012-02-12 | John B. | 200$  |
+  	
 Reference: [MD file syntax](https://github.com/fletcher/MultiMarkdown/blob/master/Documentation/Markdown%20Syntax.md)   
 Reference: [cucumber structure](http://www.nigelthorne.com/2009/04/cucumber-syntax.html)   
-Reference: [Cucumber nest practice](http://qastrategies.blogspot.com/2012/06/cucumber-best-practises.html)   
+Reference: [Cucumber best practice](http://qastrategies.blogspot.com/2012/06/cucumber-best-practises.html)   
+Reference: [Official Cucumber Overall](https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder)
 
 Cucumber Implementation step
 ========
+
 
 1. Create cucumber project following on _Cucumber Project Structure_ (Check upper section.)
 2. Create feature file following on _Feature file outline (XXX.feature)_ (Check upper section.)

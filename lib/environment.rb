@@ -103,7 +103,7 @@ end
 		@logger.debug  "@options[:authorization][:#{site}] = #{@options[:authorization][site]}"
 
 		if @options[:authorization][site].nil?
-			{ :username => 'admin', :password => 'admin' }
+			{ :username => 'userName', :password => 'password' }
 		else
 			@options[:authorization][site]
 		end
